@@ -11,5 +11,6 @@ namespace Ev_Final_DIARS_N00036571_.Models
         public int Id_etiqueta { get; set; }
         public int IdNota { get; set; } 
         public Etiqueta Etiqueta { get; set; }
+        public Nota nota { get; set; }
     }
 }

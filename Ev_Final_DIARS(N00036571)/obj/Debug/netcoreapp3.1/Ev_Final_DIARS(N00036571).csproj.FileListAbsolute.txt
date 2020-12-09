@@ -80,3 +80,4 @@ C:\Users\Malca Solis Luis\source\repos\Ev_Final_DIARS(N00036571)\Ev_Final_DIARS(
 C:\Users\Malca Solis Luis\source\repos\Ev_Final_DIARS(N00036571)\Ev_Final_DIARS(N00036571)\obj\Debug\netcoreapp3.1\Razor\Views\Nota_\Create.cshtml.g.cs
 C:\Users\Malca Solis Luis\source\repos\Ev_Final_DIARS(N00036571)\Ev_Final_DIARS(N00036571)\obj\Debug\netcoreapp3.1\Razor\Views\Nota_\Edit.cshtml.g.cs
 C:\Users\Malca Solis Luis\source\repos\Ev_Final_DIARS(N00036571)\Ev_Final_DIARS(N00036571)\obj\Debug\netcoreapp3.1\Razor\Views\Nota_\Detalle.cshtml.g.cs
+C:\Users\Malca Solis Luis\source\repos\Ev_Final_DIARS(N00036571)\Ev_Final_DIARS(N00036571)\obj\Debug\netcoreapp3.1\Razor\Views\Nota_\Etiqueta.cshtml.g.cs

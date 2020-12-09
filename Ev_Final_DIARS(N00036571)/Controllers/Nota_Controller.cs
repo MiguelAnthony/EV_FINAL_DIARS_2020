@@ -26,16 +26,20 @@ namespace Ev_Final_DIARS_N00036571_.Controllers
         }
         [HttpGet]
         public IActionResult _Index(string search)
-        {
-            var notas = context.Notas.ToList();
+        {;
+            var nota = context.Notas.ToList();
             ViewBag.Etiquetitas = context.EtiquetaNota.ToList();
             ViewBag.Etiquetas = context.Etiquetas.ToList();
             if (!String.IsNullOrEmpty(search))
             {
-                notas = notas.Where(o => o.Titulo.Contains(search) || o.Contenido.Contains(search)).ToList();
-                return View(notas);
+                nota = nota.Where(o => o.Titulo.Contains(search) || o.Contenido.Contains(search)).ToList();
+                return View(nota);
             }
-            return View(notas);
+            
+                
+                return View(nota);
+              
+            
         }
 
         [HttpGet]
@@ -135,6 +139,12 @@ namespace Ev_Final_DIARS_N00036571_.Controllers
             context.EtiquetaNota.RemoveRange(etiqueta);
             context.SaveChanges();
             return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Etiqueta(int id)
+        {
+            ViewBag.notas = context.EtiquetaNota.Where(o => o.Id_etiqueta == id).Include(x => x.nota).ToList();
+            return View();
         }
 
 

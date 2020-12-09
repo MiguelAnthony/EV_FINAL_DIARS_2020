@@ -17,6 +17,9 @@ namespace Ev_Final_DIARS_N00036571_.Models.Map
             builder.HasOne(o => o.Etiqueta).
                 WithMany().
                 HasForeignKey(o => o.Id_etiqueta);
+            builder.HasOne(o => o.nota).
+                WithMany().
+                HasForeignKey(o => o.IdNota);
 
         }
     }

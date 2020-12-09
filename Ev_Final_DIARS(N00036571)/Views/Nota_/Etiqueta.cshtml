@@ -1,41 +1,38 @@
-﻿@{
-    Layout = null;
-    
-    var nota = (List<Nota>)Model;
+﻿<div class="col-md-12">
+    <a href="/Nota_" style="margin-left:20px;" class="btn btn-success float-lg-right">Atras</a>
+    <br />
+    <br />
+</div>
 
+@foreach (var item in ViewBag.notas)
+{
+
+    <div class="container-fluid">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/Nota_/Detalle?Id=@item.nota.Id"><strong>@item.nota.Titulo</strong></a>
+                <br />
+                <span>
+                    <strong>Contenido: </strong>
+                    @if (item.nota.Contenido.Length > 50)
+                    {
+                        <parcial>@item.nota.Contenido.Substring(0, 50) ...</parcial>
+                    }
+                    else
+                    {
+                        <parcial>@item.nota.Contenido</parcial>
+                    }
+                </span>
+
+                <div align="right">
+                    <a href="/Nota_/Eliminar?id=@item.nota.Id" style="margin-left:20px;" class="btn btn-outline-danger float-lg-right">Eliminar</a>
+                    <button id="editModal" style="margin-right:20px;" class="btn btn-outline-primary float-lg-right" href="#" data-toggle="modal" data-target="#edit" onclick="selCuenta(@item.nota.Id,'@item.nota.Titulo','@item.nota.Contenido')">Editar</button>
+                </div>
+            </li>
+        </ul>
+        <br />
+    </div>
 }
-
-
-    @foreach (var item in nota)
-    {
-
-        <div class="container-fluid">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="/Nota_/Detalle?Id=@item.Id"><strong>@item.Titulo</strong></a>
-                    <br />
-                    <span>
-                        <strong>Contenido: </strong>
-                        @if (item.Contenido.Length > 50)
-                        {
-                            <parcial>@item.Contenido.Substring(0, 50) ...</parcial>
-                        }
-                        else
-                        {
-                            <parcial>@item.Contenido</parcial>
-                        }
-                    </span>
-
-                    <div align="right">
-                        <a href="/Nota_/Eliminar?id=@item.Id" style="margin-left:20px;" class="btn btn-outline-danger float-lg-right">Eliminar</a>
-                        <button id="editModal" style="margin-right:20px;" class="btn btn-outline-primary float-lg-right" href="#" data-toggle="modal" data-target="#edit" onclick="selCuenta(@item.Id,'@item.Titulo','@item.Contenido')">Editar</button>
-                    </div>
-                </li>
-            </ul>
-            <br />
-        </div>
-    }
-
 
 
 
